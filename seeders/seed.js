@@ -1,7 +1,9 @@
 let mongoose = require("mongoose");
 let db = require("../models");
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') })//where ever you want to call .env file from if it isnt in teh root folder of teh .env file you need this
 
-mongoose.connect("mongodb://localhost/workout", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
@@ -124,10 +126,15 @@ let workoutSeed = [
   }
 ];
 
-db.Workout.deleteMany({})
-  .then(() => db.Workout.collection.insertMany(workoutSeed))
+db.Transaction.create({
+  name: 'dave',
+  value: 33,
+  date: new Date()
+})
+// db.Workout.deleteMany({})
+//   .then(() => db.Workout.collection.insertMany(workoutSeed))
   .then(data => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data + " records inserted!");
     process.exit(0);
   })
   .catch(err => {

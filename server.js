@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
 
@@ -10,6 +11,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+console.log(process.env.MONGODB_URI);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutDB", {
   useNewUrlParser: true,
   useFindAndModify: false

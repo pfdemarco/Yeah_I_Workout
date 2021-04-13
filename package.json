@@ -1,7 +1,7 @@
 {
   "name": "mongoose_skeleton",
   "version": "1.0.0",
-  "description": "",
+  "description": "Workout Tracker",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +12,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.16.3",
     "mongoose": "^5.3.16",
     "morgan": "^1.9.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfdemarco/Yeah_I_Workout.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pfdemarco/Yeah_I_Workout/issues"
+  },
+  "homepage": "https://github.com/pfdemarco/Yeah_I_Workout#readme"
 }
